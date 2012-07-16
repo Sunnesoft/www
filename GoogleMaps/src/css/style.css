@@ -1,0 +1,137 @@
+* 
+{ 
+	padding:0px;
+	margin:0px; 
+}
+
+html 
+{ 
+	height: 100% 
+}
+
+body 
+{ 
+	height: 100%;
+	background: url('../img/bg.png') repeat; 
+}
+
+#map-canvas 
+{ 
+	position: relative;
+	top: 100px;
+	height: 450px; 
+	width: 650px;
+	margin: auto;
+	border: 2px solid #fff;
+}
+
+.map-window-info
+{
+	margin:0;
+	padding:3px 5px;
+	font:12px Arial;
+}
+
+.map-title,
+.map-info
+{
+	clear:both;
+}
+
+.map-title
+{
+	font-weight: bold;
+}
+
+#map-objects
+{
+	position: absolute;
+	margin: auto;
+	padding: 15px;
+	max-width: 600px;
+	max-height: 400px;
+
+	background: #fff;
+	opacity: 0.85;
+	border: 1px solid #666;	
+
+	overflow: auto;
+	z-index: 999;
+	display: none;
+}
+
+#map-objects-closer
+{
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 10px;
+	height: 10px;
+	margin: 5px 5px 0 0;
+	z-index: 1000;
+
+	background: url('../img/close.png') no-repeat 50% 50%;
+	cursor: pointer;	
+}
+
+#map-objects-closer:hover
+{
+	opacity:0.6;	
+}
+
+#map-object-list,
+#map-focus-button
+{
+	padding: 1px 5px 1px;
+	margin: 5px;
+	border: 1px solid #666;
+	font: 13px Arial;
+	background: #fff;
+	font-weight: bold;
+	cursor: pointer;
+
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+
+	-moz-box-shadow: 1px 1px 8px #aaa;
+	-webkit-box-shadow: 1px 1px 8px #aaa;
+	box-shadow: 1px 1px 8px #aaa;
+}
+
+#map-object-list:hover,
+#map-focus-button:hover
+{
+	background: #eee;
+}
+
+.map-object-current
+{
+	width: 70px;
+	display: block;
+	float:left;
+
+	font: 12px Arial;
+	word-wrap: break-word;
+
+	padding: 3px 5px;
+	border-radius: 4px;
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+	cursor:pointer;
+}
+
+.map-object-current:hover
+{
+	border: 1px solid #aaa;
+	padding: 2px 4px;
+}
+
+#map-object-list,
+#map-objects-closer
+{
+	transition: all 200ms;
+	-moz-transition: all 200ms; 
+	-webkit-transition: all  200ms;
+	-o-transition: all 200ms; 
+}

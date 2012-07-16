@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    
+    <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
+    
+    <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" src="js/gsettings.js"></script>
+    <script type="text/javascript" src="js/gpersonality.js"></script>
+    <script type="text/javascript" src="js/gwindowinfo.js"></script>
+    <script type="text/javascript" src="js/gmarker.js"></script>
+    <script type="text/javascript" src="js/gmap.js"></script>
+	<script type="text/javascript">
+		function createMap()
+		{
+			var map = new GoogleMap();
+			map.init({
+				target : 
+				{
+					id: "map-canvas",
+					fullMode : true,
+					useJquery : true
+				},
+
+				marker : 
+				{
+					list: "./json/marker_list.json",
+					icon: "./img/target.png"
+				},
+
+				map : 
+				{
+					zoom : 1
+				},
+
+				personality :
+				{
+					"navi": 
+					{
+						position: google.maps.ControlPosition.RIGHT_BOTTOM,
+						target: GoogleMapObjectList.prototype.constructor,
+						index: 1,
+						opts: {target_id:"map-canvas",info_id:"map-objects"}
+					},
+
+					"focusButton":
+					{
+						position: google.maps.ControlPosition.RIGHT_TOP,
+						target: GoogleMapFocusButton.prototype.constructor,
+						index: 2						
+					}
+				}
+			});
+
+			map.render();
+		}
+	</script>
+</head>
+	
+<body onload="createMap()">
+	<div id="map-canvas"></div>
+</body>
+	
+</html>
